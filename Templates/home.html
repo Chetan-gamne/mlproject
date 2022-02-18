@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Home</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="block">
+        <div class="welcome_text">
+            <marquee direction="right"><h1 class="welcome">Welcome</h1></marquee>
+        </div>
+        <div class="container">
+            <h2>Please Fill all the important details</h2>
+            {% csrf_token %}
+            <form action="add" method="post">    
+                <div class="box">
+                    <label for="">Age : </label><input type="number" name="Age" min="0" step="any" placeholder="Enter Your Age Here" required>
+                </div>
+                <div class="box">
+                    <label for="">Cigarettes Per Day : </label><input type="number" name="cgp" min="0" step="any" placeholder="Enter Number of Cigarettes Per Day" required>
+                </div>
+                <div class="box">
+                    <label for="">Cholesterol Level : </label><input type="number" name="chol" min="0" step="any" placeholder="Enter cholesterol level" required>
+                </div>
+                <div class="box">
+                    <label for="">Systolic Blood Pressure : </label><input type="number" name="sBP" min="0" step="any" placeholder="Enter systolic blood pressure" required>
+                </div>
+                <div class="box">
+                    <label for="">Diastolic Blood Pressure : </label><input type="number" name="dBP" min="0" step="any" placeholder="Enter diastolic blood pressure" required>
+                </div>
+                <div class="box">
+                    <label for="">Body Mass Index : </label><input type="number" name="BMI" min="0" step="any" placeholder="Enter Body Mass Index" required>
+                </div>
+                <div class="box">
+                    <label for="">Heart Rate : </label><input type="number" name="hrtRate" min="0" step="any" placeholder="Enter heart rate" required>
+                </div>
+                <div class="box">
+                    
+                    <label for="">Glucose : </label>
+                  
+                    <input type="number" name="glucose" min="0" step="any" placeholder="Enter glucose level" required>
+                </div>
+                <!-- <button class="btn">Submit</button> -->
+                <input type="submit">
+                <!-- <input type="submit"> -->
+            </form>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>
